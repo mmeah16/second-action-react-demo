@@ -1,0 +1,20 @@
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    # Uses checkout actions to 
+    # download code on server
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+      # npm ci is safer and ensures dependencies
+      # are in sync with package-lock.json
+        run: npm ci
+      - name: Run tests
+        run: npm test
