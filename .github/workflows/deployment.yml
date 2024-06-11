@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build project 
-        run: run build
+        run: npm run build
       - name: Deploy
         run: echo "Deploying..."
 
